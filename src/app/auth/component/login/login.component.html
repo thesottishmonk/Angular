@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-6 offset-md-4 mt-4">
+        <h3>Login Page</h3>
+        <form #f="ngForm" (ngSubmit)="submit(f)">
+            {{f.invalid}}
+            <div class="form-group">
+                <label for="loginUsername">Username</label>
+                <input type="text" class="form-control" id="loginUsername" name="first" ngModel #username="ngModel">
+           </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" class="form-control" id="loginPassword" name="password" ngModel #password="ngModel">
+            </div>
+            <div class="form-group form-check">
+                <a [routerLink]="['/reset-password']">Forgot Password</a>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Login</button>
+        </form>
+    </div>
+</div>
